@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+html,body{
+  width: 100%;
+  height:100%;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url("../../images/iconfont/iconfont-menu.woff") format("woff"), url("../../images/iconfont/iconfont-menu.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url("../../images/iconfont/iconfont.woff") format("woff"), url("../../images/iconfont/iconfont.ttf") format("truetype");
+}
+.iconfont {
+  font-family: 'iconfont';
+}
+
+// index styles
+.m-container{
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+
+  header{
+    height: 0.44rem;
+    background-color: #0dc441;
+    ul{
+      @include flexbox();
+      height: 100%;
+      color: #86e1a0;
+      li:not(:nth-child(2)){
+        height: 100%;
+        width: 0.44rem;
+        text-align: center;
+        line-height: 0.44rem;
+        font-size: 0.24rem;
+      }
+      li:nth-child(2){
+        @include flex();
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        span{
+          width: 0.59rem;
+          height: 0.25rem;
+          background-color: #0CCF63;
+          text-align: center;
+          line-height: 0.25rem;
+          font-size: 0.12rem;
+          &:first-child{
+            border-radius: 0.1rem 0 0 0.1rem;
+          }
+          &:last-child{
+            border-radius: 0 0.1rem 0.1rem 0;
+          }
+          &.active{
+            background-color: #0AD985;
+            color: #CEF8E7;
+          }
+        }
+      }
+    }
+
+  }
+  nav{
+    height: 0.35rem;
+    background-color: #fff;
+    ul{
+      height: 100%;
+      @include flexbox();
+      li{
+        @include flex();
+        line-height: 0.35rem;
+        text-align: center;
+        @include border(0 0 1px 0,#000000);
+        &.active{
+          color: #0DC441;
+          @include border(0 0 1px 0,#0DC441);
+        }
+      }
+    }
+  }
+  article{
+    @include flex();
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: #fff;
+    padding-bottom: 4px;
+
+    #main-swiper{
+      height: 100%;
+      section{
+        width: 100%;
+        height: 100%;
+        ul{
+          @include flexbox();
+          @include flex-wrap(wrap);
+          li{
+            width: 50%;
+            margin-top: 4px;
+            padding: 0 2px;
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+
+            img{
+              width: 100%;
+            }
+            b{
+              width: 100%;
+              @media only screen and (max-width: 321px){
+    						&{
+    							font-size: 15px;
+    						}
+    					}
+    					@media only screen and (min-width: 321px) and (max-width: 400px){
+    						&{
+    							font-size: 16px;
+    						}
+    					}
+    					@media only screen and (min-width: 400px){
+    						&{
+    							font-size: 18px;
+    						}
+    					}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer{
+    height: 0.44rem;
+    background-color: #fff;
+    ul{
+      height: 100%;
+      @include flexbox();
+      color: #6d6d6d;
+      li{
+        @include flex();
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        i{
+          font-size: 0.24rem;
+          line-height: 0.24rem;
+        }
+        b{
+          font-size: 0.12rem;
+          line-height: 0.12rem;
+        }
+        &.active{
+          color: #0DC441;
+        }
+        &:nth-child(3) i{
+          position: absolute;
+          bottom: 1px;
+          left: 50%;
+          @include transform(translate(-50%,0));
+          border: 1px solid #6d6d6d;
+          border-radius: 50%;
+          width: 0.5rem;
+          height: 0.5rem;
+          line-height: 0.44rem;
+          text-align: center;
+          background-color: #fff;
+          font-size: 0.34rem;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

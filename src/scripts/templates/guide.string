@@ -1,0 +1,17 @@
+<div class="swiper-container" id="guide-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="./images/slide1.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="./images/slide2.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="./images/slide3.png" alt="">
+    </div>
+    																			<!--给当前dom绑定function-->
+    <div class="swiper-slide" id="slide4" action-type="goto.index">
+      <img src="./images/slide4.png" alt="">
+    </div>
+  </div>
+</div>
